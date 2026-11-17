@@ -1,5 +1,5 @@
 (function(){
-  var D = window.SP, V = '?v=1';
+  var D = window.SP, V = '?v=2';
   var $ = function(s,c){return (c||document).querySelector(s)};
 
   /* Bandeau d'accueil : vraies photos des événements */
@@ -111,6 +111,12 @@
   $('#bPrev').onclick = function(){ cp = (cp-1+ce.photos.length)%ce.photos.length; montre(); };
   $('#bNext').onclick = function(){ cp = (cp+1)%ce.photos.length; montre(); };
   boite.addEventListener('click', function(ev){ if(ev.target.hasAttribute('data-fermer')) ferme(); });
+  var tx = null;
+  boite.addEventListener('touchstart', function(ev){ tx = ev.touches[0].clientX; }, {passive:true});
+  boite.addEventListener('touchend', function(ev){
+    if(tx === null) return; var dx = ev.changedTouches[0].clientX - tx; tx = null;
+    if(Math.abs(dx) > 50){ (dx < 0 ? $('#bNext') : $('#bPrev')).click(); }
+  });
   document.addEventListener('keydown', function(ev){
     if(boite.hidden) return;
     if(ev.key==='Escape') ferme(); if(ev.key==='ArrowLeft') $('#bPrev').click(); if(ev.key==='ArrowRight') $('#bNext').click();
