@@ -1,298 +1,221 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>SN Silverplate Services · Agence événementielle à Abidjan</title>
-<meta name="description" content="SN Silverplate Services, agence événementielle à Abidjan depuis 2014. Élue meilleure agence événementielle aux ASCOM 2026.">
-<link rel="icon" href="img/logo.png?v=2">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Roboto+Slab:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<title>SN Silverplate Services | Votre événement, notre mission</title>
+<meta name="description" content="Agence événementielle à Abidjan depuis 2014. De la conception à la réalisation, nous orchestrons vos événements.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#262C51;--light:#F4F6FA;--accent:#E8892B;--txt:#3b4060}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Roboto,Arial,sans-serif;color:var(--txt);background:#fff;line-height:1.65;font-weight:300}
+h1,h2,h3{font-family:'Roboto Slab',Georgia,serif;color:var(--navy);line-height:1.15}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:16px}
+section{padding:120px 0}
+h2{font-size:clamp(30px,4vw,48px);font-weight:500;margin-bottom:22px}
+.lead{font-size:19px;max-width:640px}
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:84px}
+header img{height:60px}
+header .logo-n{display:none}
+header.solid{background:#fff;box-shadow:0 2px 20px rgba(38,44,81,.08)}
+header.solid .logo-w{display:none}header.solid .logo-n{display:block}
+nav a{color:#fff;margin-left:34px;font-size:14px;font-weight:400;letter-spacing:.04em}
+header.solid nav a{color:var(--navy)}
+nav a.cta{border:1px solid currentColor;padding:10px 20px;border-radius:2px}
+nav a.cta:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+/* hero */
+.hero{position:relative;height:100vh;max-height:920px;min-height:640px;display:flex;align-items:flex-end;color:#fff;background:url(img/ev1.jpg) center/cover}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,24,48,.7) 0%,rgba(20,24,48,.62) 45%,rgba(20,24,48,.94) 100%)}
+.hero .wrap{position:relative;padding-bottom:110px;width:100%}
+.hero h1{color:#fff;font-size:clamp(42px,7vw,92px);font-weight:300;max-width:900px;letter-spacing:-.01em}
+.hero h1 b{font-weight:700}
+.hero p{font-size:20px;max-width:620px;margin:26px 0 40px;opacity:.9}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:16px 32px;font-weight:500;font-size:15px;border-radius:2px;letter-spacing:.03em;border:0;cursor:pointer;font-family:inherit}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.6);margin-left:12px}
+/* stats */
+.stats{background:var(--navy);color:#fff;padding:0}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:48px 28px;border-left:1px solid rgba(255,255,255,.12)}
+.stat:first-child{border-left:0}
+.stat strong{display:block;font-family:'Roboto Slab';font-size:44px;font-weight:300;color:#fff}
+.stat strong.sm{font-size:34px;white-space:nowrap;padding-top:8px}
+.stat span{font-size:13px;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+/* about */
+.about .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center}
+.about img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.pillars{margin-top:40px;display:grid;gap:22px}
+.pillar{border-left:2px solid var(--accent);padding-left:20px}
+.pillar h3{font-size:19px;font-weight:500;margin-bottom:4px}
+/* services */
+.services{background:var(--light)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+.card{background:#fff;padding:44px 36px;transition:.3s;border-bottom:2px solid transparent}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(38,44,81,.08);border-color:var(--accent)}
+.card svg{width:40px;height:40px;stroke:var(--navy);fill:none;stroke-width:1.4;margin-bottom:26px}
+.card h3{font-size:22px;font-weight:500;margin-bottom:10px}
+/* works */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin:40px 0 44px}
+.filters button{background:none;border:1px solid #d5d9e6;padding:10px 20px;font-family:inherit;font-size:14px;color:var(--navy);cursor:pointer;border-radius:30px}
+.filters button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.work{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--navy);color:#fff}
+.work img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.work:hover img{transform:scale(1.05)}
+.work .cap{position:absolute;inset:auto 0 0 0;padding:26px;background:linear-gradient(transparent,rgba(20,24,48,.92))}
+.work.txt{display:flex;align-items:flex-end}
+.work.txt .cap{background:none;position:static}
+.work.txt:before{content:"";position:absolute;top:28px;left:26px;width:36px;height:2px;background:var(--accent)}
+.cap small{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:500}
+.cap h3{color:#fff;font-size:20px;font-weight:500;margin-top:6px}
+.cap p{font-size:14px;opacity:.75}
+.work.hide{display:none}
+/* clients */
+.clients{padding:70px 0;border-top:1px solid #eceef4;border-bottom:1px solid #eceef4;overflow:hidden}
+.clients .eyebrow{text-align:center}
+.track{display:flex;gap:70px;white-space:nowrap;animation:scroll 32s linear infinite;width:max-content;margin-top:20px}
+.track span{font-family:'Roboto Slab';font-size:28px;color:#9aa1bb;font-weight:500}
+@keyframes scroll{to{transform:translateX(-50%)}}
+/* award */
+.award{background:var(--navy);color:#fff;text-align:center}
+.award h2{color:#fff}
+.award svg{width:64px;height:64px;stroke:var(--accent);fill:none;stroke-width:1.3;margin-bottom:24px}
+.award p{max-width:620px;margin:0 auto;opacity:.8;font-size:18px}
+/* devis */
+.devis .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:80px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);font-weight:500;display:block}
+input,select,textarea{width:100%;margin-top:8px;padding:14px;border:1px solid #d5d9e6;background:var(--light);font-family:inherit;font-size:15px;color:var(--navy)}
+.full{grid-column:1/-1}
+#ok{display:none;grid-column:1/-1;background:var(--light);border-left:3px solid var(--accent);padding:18px;color:var(--navy)}
+/* contact */
+.contact{background:var(--light)}
+.contact .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.contact h3{font-size:18px;font-weight:500;margin-bottom:10px}
+.wa{background:#25D366}
+footer{background:#1b2040;color:rgba(255,255,255,.65);padding:50px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+footer img{height:40px}
+@media(max-width:900px){
+ nav a:not(.cta){display:none}
+ section{padding:80px 0}
+ .stats .wrap{grid-template-columns:1fr 1fr}.stat:nth-child(3){border-left:0}
+ .stat{border-top:1px solid rgba(255,255,255,.12)}
+ .about .wrap,.devis .wrap,.contact .wrap{grid-template-columns:1fr;gap:40px}
+ .grid3,.works{grid-template-columns:1fr}
+ form{grid-template-columns:1fr}
+ .hero .btn{display:block;text-align:center}.btn.ghost{margin:12px 0 0}
+ .wrap{padding:0 22px}
+}
+</style>
 </head>
 <body>
+<header id="hd"><div class="wrap">
+ <a href="#top"><img class="logo-w" src="img/logo_w.png" alt="SN Silverplate Services"><img class="logo-n" src="img/logo.png" alt="SN Silverplate Services"></a>
+ <nav><a href="#agence">L'agence</a><a href="#services">Services</a><a href="#realisations">Réalisations</a><a href="#contact">Contact</a><a class="cta" href="#devis">Demander un devis</a></nav>
+</div></header>
 
-<header class="nav" id="haut">
-  <div class="nav__in">
-    <a href="#accueil" class="nav__logo" aria-label="Accueil"><img src="img/logo-blanc.png?v=2" alt="SN Silverplate Services"><span>SN Silverplate<br><small>Services</small></span></a>
-    <nav class="nav__menu" id="menu">
-      <a href="#accueil">Accueil</a>
-      <a href="#a-propos">À propos</a>
-      <a href="#services">Nos services</a>
-      <a href="#evenements">Nos événements</a>
-      <a href="#archives">Ligue Foot 7 CI</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a href="#devis" class="btn btn--clair nav__cta">Demander un devis</a>
-    <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  </div>
-</header>
+<section class="hero" id="top"><div class="wrap">
+ <div class="eyebrow">Agence événementielle, Abidjan</div>
+ <h1>Votre événement, <b>notre mission</b></h1>
+ <p>De la conception à la réalisation, nous orchestrons chaque détail de vos événements.</p>
+ <a class="btn" href="#devis">Demander un devis</a><a class="btn ghost" href="#realisations">Nos réalisations</a>
+</div></section>
 
-<!-- ACCUEIL -->
-<section class="hero" id="accueil">
-  <div class="hero__slides" id="slides"></div>
-  <div class="hero__voile"></div>
-  <div class="hero__in">
-    <a class="hero__prix" href="#ascom">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v3a5 5 0 0 1-10 0V4Zm-3 1h3v2a3 3 0 0 1-3-2Zm16 0h-3v2a3 3 0 0 0 3-2ZM10 13h4l-.5 3h-3l-.5-3Zm-2 5h8v2H8v-2Z" fill="currentColor"/></svg>
-      Élue meilleure agence événementielle · ASCOM 2026
-    </a>
-    <h1>Votre événement,<br><em>notre mission.</em></h1>
-    <p class="hero__lead">De la conception à la réalisation, nous orchestrons vos événements avec précision, créativité et impact.</p>
-    <div class="hero__btns">
-      <a href="#evenements" class="btn btn--clair">Découvrir nos réalisations</a>
-      <a href="#devis" class="btn btn--ligne">Demander un devis</a>
-    </div>
-    <div class="hero__legende" id="legende"></div>
+<section class="stats"><div class="wrap">
+ <div class="stat"><strong>2008</strong><span>Création à Beyrouth</span></div>
+ <div class="stat"><strong>2014</strong><span>Filiale en Côte d'Ivoire</span></div>
+ <div class="stat"><strong>6</strong><span>Métiers intégrés</span></div>
+ <div class="stat"><strong class="sm">ASCOM 2026</strong><span>Meilleure agence événementielle</span></div>
+</div></section>
+
+<section class="about" id="agence"><div class="wrap">
+ <div>
+  <div class="eyebrow">L'agence</div>
+  <h2>De la conception à la réalisation</h2>
+  <p class="lead">Créée en 2008 à Beyrouth, SN Silverplate Services est installée en Côte d'Ivoire depuis 2014. Une seule équipe pour penser, produire et faire vivre vos événements.</p>
+  <div class="pillars">
+   <div class="pillar"><h3>Stratégie créative</h3><p>Le concept, le message et l'expérience de vos invités.</p></div>
+   <div class="pillar"><h3>Solutions digitales</h3><p>Du teaser à l'aftermovie.</p></div>
+   <div class="pillar"><h3>Branding et 3D</h3><p>Stands, scénographies et identité de l'événement.</p></div>
   </div>
-  <div class="hero__bas">
-    <div class="hero__mots">
-      <span>Des moments qui marquent</span><span>L'événementiel, sur-mesure</span><span>Grand public ou corporate</span>
-    </div>
-  </div>
+ </div>
+ <img src="img/ev5.jpg" alt="Salon International du Tourisme et des Loisirs d'Abidjan">
+</div></section>
+
+<section class="services" id="services"><div class="wrap">
+ <div class="eyebrow">Services</div>
+ <h2>Six métiers, un seul interlocuteur</h2>
+ <div class="grid3">
+  <div class="card"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg><h3>Agence événementielle</h3><p>Conception et organisation complète de vos événements corporate, lancements et soirées.</p></div>
+  <div class="card"><svg viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13"/><path d="M3 21h18M8 21v-7h8v7"/></svg><h3>Stand</h3><p>Conception et fabrication de stands pour salons et foires.</p></div>
+  <div class="card"><svg viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M21 7l-9 5-9-5"/></svg><h3>3D</h3><p>Visualisation en 3D de vos espaces et scénographies avant production.</p></div>
+  <div class="card"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="1"/><path d="M16 10l6-3v10l-6-3z"/></svg><h3>Production audiovisuelle</h3><p>Du teaser à l'aftermovie, l'image de vos événements.</p></div>
+  <div class="card"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M12 8v13M3 12h18M12 8c-2-4-6-4-6-1s6 1 6 1 6 2 6-1-4-3-6 1"/></svg><h3>Goodies</h3><p>Objets personnalisés aux couleurs de votre marque.</p></div>
+  <div class="card"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 3 17 0 20M12 2c-3 3-3 17 0 20"/></svg><h3>Web</h3><p>Sites et supports digitaux pour prolonger vos événements en ligne.</p></div>
+ </div>
+</div></section>
+
+<section id="realisations"><div class="wrap">
+ <div class="eyebrow">Réalisations</div>
+ <h2>Ils nous ont confié leur événement</h2>
+ <div class="filters">
+  <button class="on" data-f="all">Tout</button><button data-f="corporate">Corporate</button><button data-f="lancement">Lancement produits</button><button data-f="salon">Salon</button><button data-f="soiree">Soirée privée</button><button data-f="avant">Avant-première</button>
+ </div>
+ <div class="works">
+  <div class="work txt" data-c="lancement"><div class="cap"><small>Lancement produit</small><h3>TCL West Africa Regional Launch</h3><p>SOCIAM, septembre 2026</p></div></div>
+  <div class="work" data-c="corporate"><img src="img/ev2.jpg" alt="Olympique de Marseille"><div class="cap"><small>Corporate</small><h3>Summer Tour de l'Olympique de Marseille</h3><p>Accueil de délégation, juillet 2026</p></div></div>
+  <div class="work" data-c="corporate lancement"><img src="img/ev1.jpg" alt="Ivoire Tech Next 15 et Scale Up"><div class="cap"><small>Conférence et lancement</small><h3>Ivoire Tech Next 15 et Scale Up</h3><p>Juillet 2026</p></div></div>
+  <div class="work" data-c="avant"><img src="img/ev3.jpg" alt="Les Nouveaux Boss"><div class="cap"><small>Avant-première</small><h3>Les Nouveaux Boss</h3><p>Avant-première</p></div></div>
+  <div class="work" data-c="soiree corporate"><img src="img/ev4.jpg" alt="20 ans de Parlym"><div class="cap"><small>Soirée privée</small><h3>Célébration des 20 ans de Parlym</h3><p>Anniversaire d'entreprise</p></div></div>
+  <div class="work" data-c="salon"><img src="img/ev5.jpg" alt="SITLA"><div class="cap"><small>Salon</small><h3>SITLA</h3><p>Salon International du Tourisme et des Loisirs d'Abidjan</p></div></div>
+  <div class="work" data-c="corporate"><img src="img/ev6.jpg" alt="Bootcamp du SIBC"><div class="cap"><small>Corporate</small><h3>Bootcamp du SIBC</h3><p>Formation et rencontres</p></div></div>
+  <div class="work txt" data-c="corporate"><div class="cap"><small>Corporate</small><h3>Journée porte ouverte AITEK</h3><p>2024</p></div></div>
+ </div>
+</div></section>
+
+<section class="clients"><div class="eyebrow">Ils nous font confiance</div>
+ <div class="track"><span>Canal+</span><span>Air France</span><span>CFAO</span><span>OLAM</span><span>OFI</span><span>SUNU</span><span>Socida</span><span>Wafa</span><span>Travel Blue</span><span>YouScribe</span><span>Ok Plast</span><span>Sada Motors</span><span>Sablux</span><span>Canal+</span><span>Air France</span><span>CFAO</span><span>OLAM</span><span>OFI</span><span>SUNU</span><span>Socida</span><span>Wafa</span><span>Travel Blue</span><span>YouScribe</span><span>Ok Plast</span><span>Sada Motors</span><span>Sablux</span></div>
 </section>
 
-<!-- CHIFFRES -->
-<section class="chiffres">
-  <div class="wrap chiffres__grid">
-    <div class="chiffre"><b data-n="200">0</b><span>clients au total</span></div>
-    <div class="chiffre"><b data-n="50">0</b><span>campagnes réalisées</span></div>
-    <div class="chiffre"><b data-n="500">0</b><span>événements réalisés</span></div>
-    <div class="chiffre chiffre--an"><b>2008</b><span>création à Beyrouth · Abidjan depuis 2014</span></div>
-  </div>
-</section>
+<section class="award"><div class="wrap">
+ <svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg>
+ <div class="eyebrow">Distinction</div>
+ <h2>Meilleure Agence Événementielle, ASCOM 2026</h2>
+ <p>Une reconnaissance de la profession pour le travail de toute l'équipe et la confiance de nos clients.</p>
+</div></section>
 
-<!-- A PROPOS -->
-<section class="apropos" id="a-propos">
-  <div class="wrap apropos__grid">
-    <div class="apropos__txt">
-      <p class="sur">À propos</p>
-      <h2>Nous sommes SN Silverplate Services.</h2>
-      <p class="grand">Nous imaginons un concept unique pour vous. Nous choisissons le meilleur lieu pour votre manifestation, afin que votre prochain événement soit une réussite.</p>
-      <p>Notre équipe d'experts en événementiel apporte une touche luxueuse à votre séminaire, dîner de gala ou cérémonie de vœux. Que ce soit pour booster la motivation de vos équipes, renforcer leur cohésion ou améliorer la communication au sein de votre société, nous vous proposons des événements adaptés.</p>
-      <ol class="frise">
-        <li><b>2008</b><span>Création de Silverplate Services à Beyrouth</span></li>
-        <li><b>2014</b><span>Ouverture de la filiale en Côte d'Ivoire</span></li>
-        <li><b>2024</b><span>Ouverture d'une filiale au Burkina Faso</span></li>
-        <li class="or"><b>2026</b><span>Meilleure agence événementielle aux ASCOM</span></li>
-      </ol>
-    </div>
-    <div class="apropos__photos">
-      <figure class="ph ph--a"><img src="img/evt/e5_0.jpg?v=2" alt="Soirée TCL West Africa Regional Launch" loading="lazy"></figure>
-      <figure class="ph ph--b"><img src="img/evt/e2_9.jpg?v=2" alt="Salle des 20 ans de Parlym" loading="lazy"></figure>
-      <figure class="ph ph--c"><img src="img/evt/e4_3.jpg?v=2" alt="AITEK Innovation Summit" loading="lazy"></figure>
-    </div>
-  </div>
+<section class="devis" id="devis"><div class="wrap">
+ <div><div class="eyebrow">Devis</div><h2>Parlons de votre prochain événement</h2><p class="lead">Quelques informations suffisent pour que notre équipe vous recontacte avec une proposition.</p></div>
+ <form id="f" onsubmit="event.preventDefault();document.getElementById('ok').style.display='block';this.reset();">
+  <label>Type d'événement<select required><option value="">Choisir</option><option>Corporate</option><option>Lancement produit</option><option>Salon</option><option>Soirée privée</option><option>Avant-première</option></select></label>
+  <label>Date souhaitée<input type="date"></label>
+  <label>Nombre d'invités<input type="number" min="1" placeholder="Ex. 200"></label>
+  <label>Budget indicatif<select><option>Moins de 5 millions FCFA</option><option>5 à 20 millions FCFA</option><option>Plus de 20 millions FCFA</option></select></label>
+  <label>Nom<input required></label><label>Téléphone ou e-mail<input required></label>
+  <label class="full">Votre projet<textarea rows="4"></textarea></label>
+  <div class="full"><button class="btn" type="submit">Envoyer la demande</button></div>
+  <div id="ok">Démonstration : la demande n'a pas été envoyée. Sur le site en production, elle arrivera directement à l'équipe.</div>
+ </form>
+</div></section>
 
-  <div class="wrap valeurs">
-    <article><i>01</i><h3>Création</h3><p>Créée en 2008 à Beyrouth, Silverplate Services a su s'imposer pour devenir une référence dans son domaine.</p></article>
-    <article><i>02</i><h3>Service</h3><p>Dans un monde où tout évolue très vite et vos exigences sont toujours plus grandes, nous vous proposons un service 100 % personnalisé.</p></article>
-    <article><i>03</i><h3>Engagement</h3><p>À vos côtés, nous référençons, comparons et choisissons les meilleurs prestataires pour vous satisfaire dans les délais.</p></article>
-    <article><i>04</i><h3>Confiance</h3><p>La confiance est la règle d'or, respectée à chaque fois que vous nous confiez la gestion de votre quotidien.</p></article>
-  </div>
-</section>
+<section class="contact" id="contact"><div class="wrap">
+ <div><h3>Adresse</h3><p>VGE, à 200 m du Carrefour Solibra, face au collège Moderne, Autoroute Treichville, Abidjan<br>Immeuble Chevalier de Clieu, 1er étage</p><p style="margin-top:12px"><a style="color:var(--accent);font-weight:500" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Immeuble+Chevalier+de+Clieu+Treichville+Abidjan">Voir sur Google Maps</a></p></div>
+ <div><h3>Nous écrire</h3><p><a href="mailto:info@silverplate-services.com">info@silverplate-services.com</a></p><h3 style="margin-top:24px">Nous appeler</h3><p><a href="tel:+2250707727292">+225 07 07 72 72 92</a></p></div>
+ <div><h3>Échanger tout de suite</h3><p style="margin-bottom:20px">Réponse rapide de notre équipe sur WhatsApp.</p><a class="btn wa" target="_blank" href="https://wa.me/2250707727292">Écrire sur WhatsApp</a></div>
+</div></section>
 
-<!-- ASCOM -->
-<section class="ascom" id="ascom">
-  <div class="wrap ascom__grid">
-    <div class="ascom__txt">
-      <p class="sur sur--clair">Distinction</p>
-      <h2>Meilleure agence événementielle.</h2>
-      <p class="ascom__date">ASCOM 2026 · 13<sup>e</sup> édition · jeudi 17 septembre 2026</p>
-      <p>Ce prix revient à l'ensemble de nos équipes et à nos clients, que nous remercions pour leur confiance. Merci aux ASCOM et aux membres du jury pour cette distinction.</p>
-      <a class="btn btn--clair" href="#evenements">Voir ce qui nous a menés là</a>
-    </div>
-    <div class="ascom__photos">
-      <img class="a1" src="img/ascom/ascom3.jpg?v=2" alt="Trophée ASCOM 2026, meilleure agence événementielle, SN Silverplate Services" loading="lazy">
-      <img class="a2" src="img/ascom/ascom4.jpg?v=2" alt="Remise du prix ASCOM 2026" loading="lazy">
-      <img class="a3" src="img/ascom/ascom1.jpg?v=2" alt="L'équipe Silverplate avec le trophée" loading="lazy">
-    </div>
-  </div>
-</section>
+<footer><div class="wrap"><img src="img/logo_w.png" alt="SN Silverplate Services"><span>Agence événementielle, Stand, 3D, Production audiovisuelle, Goodies, Web</span><span>Ligue Foot 7 CI</span></div></footer>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="wrap">
-    <div class="tete">
-      <p class="sur">Nos services</p>
-      <h2>Ce que nous savons faire.</h2>
-      <p>Six métiers sous un même toit, pour qu'un seul interlocuteur tienne votre événement de l'idée à l'image finale.</p>
-    </div>
-    <div class="serv__grid" id="servGrid"></div>
-  </div>
-</section>
-
-<!-- POURQUOI -->
-<section class="pourquoi">
-  <div class="wrap pourquoi__grid">
-    <div>
-      <p class="sur">Pourquoi nous choisir ?</p>
-      <h2>Parce qu'un bon événement ne s'improvise pas.</h2>
-      <p class="grand">Nous vous accompagnons à chaque étape : de l'idée à l'expérience finale.</p>
-    </div>
-    <ul class="etapes">
-      <li><span>1</span><div><b>Des idées créatives</b><p>Des concepts impactants, alignés à votre vision et à vos valeurs.</p></div></li>
-      <li><span>2</span><div><b>Une gestion rigoureuse</b><p>Animations, scénographie, coordination : rien n'est laissé au hasard, du début à la fin.</p></div></li>
-      <li><span>3</span><div><b>Des solutions sur-mesure</b><p>Du grand public au corporate, notre savoir-faire s'adapte à chaque format et à vos objectifs.</p></div></li>
-      <li><span>4</span><div><b>Des résultats visibles</b><p>Notoriété, engagement, émotion.</p></div></li>
-    </ul>
-  </div>
-  <div class="wrap trio">
-    <article><h3>Stratégie créative</h3><p>Des concepts sur-mesure pour sublimer vos événements et capter l'attention. De l'identité visuelle à la mise en scène, notre créativité sert vos objectifs.</p></article>
-    <article><h3>Solutions digitales</h3><p>Du teaser à l'aftermovie, en passant par les contenus réseaux sociaux et les activations en ligne : des expériences digitales mémorables autour de vos événements.</p></article>
-    <article><h3>Branding &amp; 3D</h3><p>Votre univers de marque prend vie : supports visuels immersifs, modélisations 3D et rendus haut de gamme pour vos stands, scènes et décors.</p></article>
-  </div>
-</section>
-
-<!-- EVENEMENTS -->
-<section class="evenements" id="evenements">
-  <div class="wrap">
-    <div class="tete tete--ligne">
-      <div>
-        <p class="sur">Nos événements</p>
-        <h2>Des moments qui marquent.</h2>
-        <p>Chaque projet est une création originale et authentique signée Silverplate Services.</p>
-      </div>
-      <div class="filtres" id="filtres" role="tablist"></div>
-    </div>
-    <div class="evt__grid" id="evtGrid"></div>
-  </div>
-</section>
-
-<!-- ARCHIVES -->
-<section class="archives" id="archives">
-  <div class="wrap archives__grid">
-    <div>
-      <p class="sur">Ligue Foot 7 CI &amp; archives</p>
-      <h2>Ils nous ont aussi fait confiance pour…</h2>
-      <p>Une partie des événements publiés au fil des années sur notre site.</p>
-    </div>
-    <ul class="archives__liste" id="archList"></ul>
-  </div>
-</section>
-
-<!-- CLIENTS -->
-<section class="clients" id="clients">
-  <div class="wrap">
-    <div class="tete tete--centre">
-      <p class="sur">Ils nous font confiance</p>
-      <h2>Des marques, des institutions, des fidèles.</h2>
-    </div>
-  </div>
-  <div class="defile"><div class="defile__piste" id="piste1"></div></div>
-  <div class="defile defile--inverse"><div class="defile__piste" id="piste2"></div></div>
-</section>
-
-<!-- EQUIPE -->
-<section class="equipe">
-  <div class="wrap">
-    <div class="tete">
-      <p class="sur">Membres de l'équipe</p>
-      <h2>Rencontrez notre équipe.</h2>
-    </div>
-    <div class="equipe__grid">
-      <div class="membre"><i>AF</i><b>Alice Flis Raheb</b><span>Directrice générale</span></div>
-      <div class="membre"><i>JW</i><b>Jamal Wehaibi</b><span>Directeur général adjoint</span></div>
-      <div class="membre"><i>AT</i><b>Arnaud Tavares</b><span>Directeur artistique</span></div>
-      <div class="membre"><i>NB</i><b>Nina Boly</b><span>Cheffe de projet</span></div>
-      <div class="membre"><i>JB</i><b>Jules Bama</b><span>Senior UI/UX designer</span></div>
-      <div class="membre"><i>MA</i><b>Marina Abby</b><span>Commerciale</span></div>
-      <div class="membre"><i>TE</i><b>Toh Emmanuel</b><span>Assistance logistique</span></div>
-      <div class="membre"><i>KN</i><b>Konan Noël</b><span>Transport logistique</span></div>
-      <div class="membre"><i>RM</i><b>Ranarijaona Marc</b><span>Chargé de communication</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT / DEVIS -->
-<section class="contact" id="contact">
-  <div class="wrap contact__grid">
-    <div class="contact__info">
-      <p class="sur sur--clair">Contact</p>
-      <h2>Avez-vous un projet en tête ?</h2>
-      <p>Décrivez-nous votre événement : nous revenons vers vous avec une proposition.</p>
-      <ul class="coord">
-        <li><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z" fill="currentColor"/></svg><div><b>Adresse</b>Immeuble Chevalier de Clieu, 1<sup>er</sup> étage<br>VGE, à 200 m du carrefour Solibra, face au Collège Moderne Autoroute<br>Treichville, Abidjan · Côte d'Ivoire<br><a href="https://www.google.com/maps/search/?api=1&query=Immeuble+Chevalier+de+Clieu+Treichville+Abidjan" target="_blank" rel="noopener">Voir sur la carte</a></div></li>
-        <li><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1l-2.2 2.2Z" fill="currentColor"/></svg><div><b>Téléphone</b><a href="tel:+2250777130597">+225 07 77 13 05 97</a><br><a href="tel:+2250707727292">+225 07 07 72 72 92</a></div></li>
-        <li><svg viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm2 2v.5l7 4.5 7-4.5V7H5Zm0 2.9V17h14V9.9l-7 4.5-7-4.5Z" fill="currentColor"/></svg><div><b>E-mail</b><a href="mailto:info@silverplate-services.com">info@silverplate-services.com</a></div></li>
-      </ul>
-      <div class="reseaux">
-        <a href="https://www.facebook.com/silverplateservices" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://www.instagram.com/silverplateservices" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.linkedin.com/company/silverplateservices/" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </div>
-
-    <form class="devis" id="devis" novalidate>
-      <h3>Demande de devis</h3>
-      <p class="devis__sous">Trois minutes suffisent. Les champs marqués * sont nécessaires.</p>
-      <fieldset class="devis__types">
-        <legend>Type d'événement *</legend>
-        <label><input type="radio" name="type" value="Lancement de produit" required><span>Lancement de produit</span></label>
-        <label><input type="radio" name="type" value="Soirée de gala"><span>Soirée de gala</span></label>
-        <label><input type="radio" name="type" value="Conférence / séminaire"><span>Conférence, séminaire</span></label>
-        <label><input type="radio" name="type" value="Salon / stand"><span>Salon, stand</span></label>
-        <label><input type="radio" name="type" value="Soirée privée"><span>Soirée privée</span></label>
-        <label><input type="radio" name="type" value="Autre"><span>Autre</span></label>
-      </fieldset>
-      <div class="devis__ligne">
-        <label>Nom et prénom *<input name="nom" autocomplete="name" required></label>
-        <label>Société<input name="societe" autocomplete="organization"></label>
-      </div>
-      <div class="devis__ligne">
-        <label>E-mail *<input type="email" name="email" autocomplete="email" required></label>
-        <label>Téléphone *<input type="tel" name="tel" autocomplete="tel" placeholder="+225" required></label>
-      </div>
-      <div class="devis__ligne devis__ligne--3">
-        <label>Date souhaitée<input type="date" name="date"></label>
-        <label>Invités<select name="invites"><option value="">Choisir</option><option>Moins de 50</option><option>50 à 150</option><option>150 à 300</option><option>300 à 1 000</option><option>Plus de 1 000</option></select></label>
-        <label>Ville<input name="ville" value="Abidjan"></label>
-      </div>
-      <fieldset class="devis__besoins">
-        <legend>Ce dont vous avez besoin</legend>
-        <label><input type="checkbox" name="besoins" value="Conception et coordination"><span>Conception &amp; coordination</span></label>
-        <label><input type="checkbox" name="besoins" value="Stand"><span>Stand</span></label>
-        <label><input type="checkbox" name="besoins" value="Réalisation 3D"><span>3D</span></label>
-        <label><input type="checkbox" name="besoins" value="Production audiovisuelle"><span>Vidéo</span></label>
-        <label><input type="checkbox" name="besoins" value="Goodies"><span>Goodies</span></label>
-        <label><input type="checkbox" name="besoins" value="Web"><span>Web</span></label>
-      </fieldset>
-      <label>Votre projet en quelques lignes<textarea name="message" rows="4" placeholder="Objectif, public, lieu envisagé, contraintes…"></textarea></label>
-      <p class="devis__err" id="devisErr" hidden>Merci de compléter les champs marqués *.</p>
-      <button class="btn btn--plein" type="submit">Envoyer ma demande</button>
-    </form>
-
-    <div class="merci" id="merci" hidden>
-      <div class="merci__ico">✓</div>
-      <h3>Merci <span id="mNom"></span>, votre demande est bien notée.</h3>
-      <p>Voici le récapitulatif de votre demande :</p>
-      <dl id="mRecap"></dl>
-      <button class="btn btn--ligne-fonce" id="mNouveau" type="button">Faire une autre demande</button>
-    </div>
-  </div>
-</section>
-
-<footer class="pied">
-  <div class="wrap pied__grid">
-    <div><img src="img/logo-blanc.png?v=2" alt="SN Silverplate Services" class="pied__logo"><p>Agence événementielle · Abidjan, Côte d'Ivoire<br>Beyrouth 2008 · Abidjan 2014 · Burkina Faso 2024</p></div>
-    <div><b>Navigation</b><a href="#a-propos">À propos</a><a href="#services">Nos services</a><a href="#evenements">Nos événements</a><a href="#contact">Contact</a></div>
-    <div><b>Contact</b><a href="tel:+2250777130597">+225 07 77 13 05 97</a><a href="mailto:info@silverplate-services.com">info@silverplate-services.com</a></div>
-  </div>
-  <div class="wrap pied__bas">© 2026 SN Silverplate Services</div>
-</footer>
-
-<div class="boite" id="boite" hidden>
-  <div class="boite__fond" data-fermer></div>
-  <div class="boite__in" role="dialog" aria-modal="true" aria-labelledby="bTitre">
-    <button class="boite__x" data-fermer aria-label="Fermer">×</button>
-    <div class="boite__img"><img id="bImg" alt=""><button class="boite__nav boite__nav--g" id="bPrev" aria-label="Photo précédente">‹</button><button class="boite__nav boite__nav--d" id="bNext" aria-label="Photo suivante">›</button><span class="boite__cpt" id="bCpt"></span></div>
-    <div class="boite__txt"><p class="sur" id="bType"></p><h3 id="bTitre"></h3><p id="bInfo"></p><div class="boite__vign" id="bVign"></div></div>
-  </div>
-</div>
-
-<script src="data.js?v=2"></script>
-<script src="app.js?v=2"></script>
+<script>
+const hd=document.getElementById('hd');const s=()=>hd.classList.toggle('solid',scrollY>60);addEventListener('scroll',s);s();
+document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');const f=b.dataset.f;document.querySelectorAll('.work').forEach(w=>w.classList.toggle('hide',f!=='all'&&!w.dataset.c.split(' ').includes(f)))});
+</script>
 </body>
 </html>
