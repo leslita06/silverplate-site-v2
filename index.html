@@ -22,7 +22,7 @@ h2{font-size:clamp(30px,4vw,48px);font-weight:500;margin-bottom:22px}
 /* nav */
 header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:84px}
-header img{height:46px}
+header img{height:60px}
 header .logo-n{display:none}
 header.solid{background:#fff;box-shadow:0 2px 20px rgba(38,44,81,.08)}
 header.solid .logo-w{display:none}header.solid .logo-n{display:block}
@@ -31,8 +31,8 @@ header.solid nav a{color:var(--navy)}
 nav a.cta{border:1px solid currentColor;padding:10px 20px;border-radius:2px}
 nav a.cta:hover{background:var(--accent);border-color:var(--accent);color:#fff}
 /* hero */
-.hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:flex-end;color:#fff;background:url(img/ev1.jpg) center/cover}
-.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,24,48,.55) 0%,rgba(20,24,48,.35) 40%,rgba(20,24,48,.9) 100%)}
+.hero{position:relative;height:100vh;max-height:920px;min-height:640px;display:flex;align-items:flex-end;color:#fff;background:url(img/ev1.jpg) center/cover}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,24,48,.7) 0%,rgba(20,24,48,.62) 45%,rgba(20,24,48,.94) 100%)}
 .hero .wrap{position:relative;padding-bottom:110px;width:100%}
 .hero h1{color:#fff;font-size:clamp(42px,7vw,92px);font-weight:300;max-width:900px;letter-spacing:-.01em}
 .hero h1 b{font-weight:700}
@@ -109,7 +109,7 @@ footer img{height:40px}
  .about .wrap,.devis .wrap,.contact .wrap{grid-template-columns:1fr;gap:40px}
  .grid3,.works{grid-template-columns:1fr}
  form{grid-template-columns:1fr}
- .btn.ghost{margin:12px 0 0}
+ .hero .btn{display:block;text-align:center}.btn.ghost{margin:12px 0 0}
  .wrap{padding:0 22px}
 }
 </style>
@@ -170,7 +170,7 @@ footer img{height:40px}
  <div class="works">
   <div class="work txt" data-c="lancement"><div class="cap"><small>Lancement produit</small><h3>TCL West Africa Regional Launch</h3><p>SOCIAM, septembre 2026</p></div></div>
   <div class="work" data-c="corporate"><img src="img/ev2.jpg" alt="Olympique de Marseille"><div class="cap"><small>Corporate</small><h3>Summer Tour de l'Olympique de Marseille</h3><p>Accueil de délégation, juillet 2026</p></div></div>
-  <div class="work txt" data-c="corporate lancement"><div class="cap"><small>Conférence et lancement</small><h3>Ivoire Tech Next 15 et Scale Up</h3><p>Juillet 2026</p></div></div>
+  <div class="work" data-c="corporate lancement"><img src="img/ev1.jpg" alt="Ivoire Tech Next 15 et Scale Up"><div class="cap"><small>Conférence et lancement</small><h3>Ivoire Tech Next 15 et Scale Up</h3><p>Juillet 2026</p></div></div>
   <div class="work" data-c="avant"><img src="img/ev3.jpg" alt="Les Nouveaux Boss"><div class="cap"><small>Avant-première</small><h3>Les Nouveaux Boss</h3><p>Avant-première</p></div></div>
   <div class="work" data-c="soiree corporate"><img src="img/ev4.jpg" alt="20 ans de Parlym"><div class="cap"><small>Soirée privée</small><h3>Célébration des 20 ans de Parlym</h3><p>Anniversaire d'entreprise</p></div></div>
   <div class="work" data-c="salon"><img src="img/ev5.jpg" alt="SITLA"><div class="cap"><small>Salon</small><h3>SITLA</h3><p>Salon International du Tourisme et des Loisirs d'Abidjan</p></div></div>
