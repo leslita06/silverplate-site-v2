@@ -1,5 +1,5 @@
 (function(){
-  var D = window.SP, V = '?v=2';
+  var D = window.SP, V = '?v=3';
   var $ = function(s,c){return (c||document).querySelector(s)};
 
   /* Bandeau d'accueil : vraies photos des événements */
@@ -7,7 +7,6 @@
     ['e5_1','TCL West Africa Regional Launch · septembre 2026'],
     ['e0_4','Summer Tour de l\'Olympique de Marseille · juillet 2026'],
     ['e2_9','Célébration des 20 ans de Parlym'],
-    ['e3_4','Ivoire Tech Next 15 & Scale Up · juillet 2026'],
     ['e6_2','Les Nouveaux Boss · avant-première'],
     ['e7_9','Salon International du Tourisme et des Loisirs d\'Abidjan']
   ];
@@ -64,7 +63,7 @@
     ['td','Réalisation 3D','Riche, dynamique et puissante, la 3D offre à votre audience un contenu visuel unique, à fort impact, pour dynamiser votre stratégie marketing.',['Stands','Scènes','Décors'],'e2_8'],
     ['video','Production audiovisuelle','Montage, film événementiel, clip, film d\'entreprise, captation multi-caméras, motion design, team building vidéo, captation drone.',['Aftermovie','Drone','Motion design'],'e6_0'],
     ['goodies','Goodies','Nous développons et déclinons votre charte graphique sur papier et sur objets : cartes de visite, flyers, brochures, kakémonos, t-shirts, casquettes, packaging.',['Print','Textile','Packaging'],'e2_7'],
-    ['web','Web','Site vitrine ou dynamique, e-réputation, stratégie social media, campagnes digitales : une solution personnalisée pour vos projets digitaux.',['Sites','Réseaux sociaux','Campagnes'],'e3_5']
+    ['web','Web','Site vitrine ou dynamique, e-réputation, stratégie social media, campagnes digitales : une solution personnalisée pour vos projets digitaux.',['Sites','Réseaux sociaux','Campagnes'],'e5_8']
   ];
   $('#servGrid').innerHTML = serv.map(function(s){
     return '<article class="serv apparait"><img src="img/evt/'+s[4]+'.jpg'+V+'" alt="" loading="lazy">'+
